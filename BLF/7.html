@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TXT文件查看器</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        h1 {
+            color: #333;
+            text-align: center;
+        }
+        .container {
+            margin-top: 30px;
+        }
+        #fileList {
+            margin-bottom: 20px;
+        }
+        #fileContent {
+            white-space: pre-wrap;
+            background-color: #f5f5f5;
+            padding: 15px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            min-height: 200px;
+        }
+        select {
+            padding: 8px;
+            width: 100%;
+            margin-bottom: 15px;
+        }
+        .loading {
+            color: #666;
+            font-style: italic;
+        }
+        .error {
+            color: #d32f2f;
+        }
+    </style>
+</head>
+<body>
+    <h1>TXT文件查看器</h1>
+    
+    <div class="container">
+        <h3>选择文件：</h3>
+        <select id="fileSelector">
+            <option value="">-- 请选择文件 --</option>
+        </select>
+        
+        <h3>文件内容：</h3>
+        <div id="fileContent">请从上方选择一个TXT文件...</div>
+    </div>
+
+    <script>
+        // 获取同目录下的TXT文件列表
+        async function fetchTxtFiles() {
+            try {
+                // 这里假设你知道可能的TXT文件名，或者有某种命名规律
+                // 在实际应用中，你可能需要服务器端支持来获取真实文件列表
+                // 这是一个模拟实现，你需要替换为实际的文件名
+                const txtFiles = [
+                    '1.txt',
+                    '2.txt',
+                    '3.txt',
+                    '4.txt',
+                    '5.txt',
+                    '6.txt'
+                    // 添加你实际会部署的TXT文件名
+                ];
+                
+                return txtFiles;
+            } catch (error) {
+                console.error('获取文件列表失败:', error);
+                return [];
+            }
+        }
+
+        // 加载并显示选择的文件内容
+        async function loadSelectedFile(filename) {
+            const fileContent = document.getElementById('fileContent');
+            
+            if (!filename) {
+                fileContent.textContent = "请选择一个TXT文件...";
+                return;
+            }
+            
+            fileContent.textContent = "加载中...";
+            
+            try {
+                const response = await fetch(filename);
+                
+                if (!response.ok) {
+                    throw new Error(`文件加载失败: ${response.status}`);
+                }
+                
+                const text = await response.text();
+                fileContent.textContent = text;
+            } catch (error) {
+                fileContent.textContent = `错误: ${error.message}`;
+                console.error('加载文件出错:', error);
+            }
+        }
+
+        // 初始化页面
+        async function init() {
+            const fileSelector = document.getElementById('fileSelector');
+            
+            // 获取TXT文件列表并填充选择器
+            const txtFiles = await fetchTxtFiles();
+            
+            txtFiles.forEach(file => {
+                const option = document.createElement('option');
+                option.value = file;
+                option.textContent = file;
+                fileSelector.appendChild(option);
+            });
+            
+            // 监听选择变化
+            fileSelector.addEventListener('change', (e) => {
+                loadSelectedFile(e.target.value);
+            });
+        }
+
+        // 页面加载完成后初始化
+        window.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
