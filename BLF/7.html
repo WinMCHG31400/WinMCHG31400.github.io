@@ -78,6 +78,7 @@
         // 加载并显示选择的文件内容
         async function loadSelectedFile(filename) {
             const fileContent = document.getElementById('fileContent');
+            filename="./data/"+filename
             if (!filename) {
                 fileContent.textContent = "请选择一个TXT文件...";
                 return;
