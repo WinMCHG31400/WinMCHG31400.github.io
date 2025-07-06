@@ -125,7 +125,7 @@
         // 读取文件
         async function readGB18030File(filename) {
             try {
-                filename="./data/"+filename+".txt";
+                filename=filename+".txt";
                 const display = document.getElementById('fileContent');
                 display.innerHTML = `<span class="loading"></span>正在加载文件...`;
                 
