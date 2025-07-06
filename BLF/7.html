@@ -86,7 +86,7 @@
             const display = document.getElementById('fileContent');
             filename="./data/"+filename+".txt"
             if (!filename) {
-                display.textContent = '请选择一个文件...';
+                display.textContent = '请选择一个篇目...';
                 display.className = 'status';
                 return;
             }
@@ -113,7 +113,7 @@
             const selector = document.getElementById('fileSelector');
             
             // 清空选择器
-            selector.innerHTML = '<option value="">-- 选择文件 --</option>';
+            selector.innerHTML = '<option value="">-- 选择篇目 --</option>';
             
             // 使用配置中的文件列表
             const files = CONFIG.GB18030_FILES;
