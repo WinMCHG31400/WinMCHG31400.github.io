@@ -7,8 +7,13 @@
         {
             "type": "msedge",
             "request": "launch",
-            "name": "Open 5.html",
+            "name": "Open BLF",
             "file": "c:\\Users\\mine\\Documents\\[]my\\Github\\WinMCHG31400.github.io\\BLF\\index.html"
+        },{
+            "type": "msedge",
+            "request": "launch",
+            "name": "Open TOOLS",
+            "file": "c:\\Users\\mine\\Documents\\[]my\\Github\\WinMCHG31400.github.io\\tools\\index.html"
         }
     ]
 }
