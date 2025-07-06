@@ -45,16 +45,16 @@
     </style>
 </head>
 <body>
-    <h1>TXT文件查看器</h1>
+    <h1>刘慈欣小说集</h1>
     
     <div class="container">
-        <h3>选择文件：</h3>
+        <h3>选择篇目：</h3>
         <select id="fileSelector">
-            <option value="">-- 请选择文件 --</option>
+            <option value="">-- 请选择篇目 --</option>
         </select>
         
-        <h3>文件内容：</h3>
-        <div id="fileContent">请从上方选择一个TXT文件...</div>
+        <h3>内容：</h3>
+        <div id="fileContent">请从上方选择一个篇目...</div>
     </div>
 
     <script>
@@ -64,13 +64,7 @@
                 // 这里假设你知道可能的TXT文件名，或者有某种命名规律
                 // 在实际应用中，你可能需要服务器端支持来获取真实文件列表
                 // 这是一个模拟实现，你需要替换为实际的文件名
-                const txtFiles = [
-                    '1.txt',
-                    '2.txt',
-                    '3.txt',
-                    '4.txt',
-                    '5.txt',
-                    '6.txt'
+                const txtFiles = ["[01]《鲸歌》.txt","[02]《微观尽头》.txt","[03]《坍缩》.txt","[04]《带上她的眼晴》.txt","[05]《地火》.txt","[06]《流浪地球》.txt","[07]《乡村教师》.txt","[08]《微纪元》.txt","[09]《纤维》.txt","[10]《命运》.txt","[11]《全频带阻塞干扰》（俄罗斯版）.txt","[12]《全频带阻塞干扰》（中国版）.txt","[13]《信使》.txt","[14]《混沌蝴蝶》.txt","[15]《西洋》.txt","[16]《中国太阳》.txt","[17]《梦之海》.txt","[18]《朝闻道》.txt","[19]《天使时代》.txt","[20]《吞食者》.txt","[21]《诗云》.txt","[22]《光荣与梦想》.txt","[23]《地球大炮》.txt","[24]《思想者》.txt","[25]《圆圆的肥皂泡》.txt","[26]《白垩纪往事》.txt","[27]《镜子》.txt","[28]《赡养上帝》.txt","[29]《欢乐颂》.txt","[30]《赡养人类》.txt","[31]《山》.txt","[32]《海水高山》.txt","[33]《2018年4月1日》.txt","[34]《人生》.txt","[35]《太原之恋》.txt","[36]《时间移民》.txt","[37]《月夜》.txt","[38]《黄金原野》.txt","[39]《不能共存的节日》.txt"
                     // 添加你实际会部署的TXT文件名
                 ];
                 
@@ -84,7 +78,6 @@
         // 加载并显示选择的文件内容
         async function loadSelectedFile(filename) {
             const fileContent = document.getElementById('fileContent');
-            
             if (!filename) {
                 fileContent.textContent = "请选择一个TXT文件...";
                 return;
