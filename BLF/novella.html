@@ -140,6 +140,8 @@
                 }
                 
                 const buffer = await response.arrayBuffer();
+                const decoder = new TextDecoder();
+                const content = decoder.decode(buffer);
                 
                 // 更新文件信息
                 document.getElementById('fileInfo').textContent =`大小: ${formatFileSize(buffer.byteLength)}`;
