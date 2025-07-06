@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GB18030编码文件阅读器</title>
+    <title>刘慈欣小说集</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -43,22 +43,22 @@
     </style>
 </head>
 <body>
-    <h1>GB18030编码文件阅读器</h1>
+    <h1>刘慈欣小说集</h1>
     
     <div class="container">
-        <h3>选择要查看的文件：</h3>
+        <h3>选择要查看的篇目：</h3>
         <select id="fileSelector">
             <option value="">-- 正在加载文件列表 --</option>
         </select>
         
-        <div id="fileContent" class="status">请从上方选择一个文件...</div>
+        <div id="fileContent" class="status">请从上方选择一个篇目...</div>
     </div>
 
     <script>
         // 配置部分
         const CONFIG = {
             // 已知的GB18030编码文件列表
-            GB18030_FILES: ["[01]《鲸歌》.txt","[02]《微观尽头》.txt","[03]《坍缩》.txt","[04]《带上她的眼晴》.txt","[05]《地火》.txt","[06]《流浪地球》.txt","[07]《乡村教师》.txt","[08]《微纪元》.txt","[09]《纤维》.txt","[10]《命运》.txt","[11]《全频带阻塞干扰》（俄罗斯版）.txt","[12]《全频带阻塞干扰》（中国版）.txt","[13]《信使》.txt","[14]《混沌蝴蝶》.txt","[15]《西洋》.txt","[16]《中国太阳》.txt","[17]《梦之海》.txt","[18]《朝闻道》.txt","[19]《天使时代》.txt","[20]《吞食者》.txt","[21]《诗云》.txt","[22]《光荣与梦想》.txt","[23]《地球大炮》.txt","[24]《思想者》.txt","[25]《圆圆的肥皂泡》.txt","[26]《白垩纪往事》.txt","[27]《镜子》.txt","[28]《赡养上帝》.txt","[29]《欢乐颂》.txt","[30]《赡养人类》.txt","[31]《山》.txt","[32]《海水高山》.txt","[33]《2018年4月1日》.txt","[34]《人生》.txt","[35]《太原之恋》.txt","[36]《时间移民》.txt","[37]《月夜》.txt","[38]《黄金原野》.txt","[39]《不能共存的节日》.txt"
+            GB18030_FILES: ["[01]《鲸歌》","[02]《微观尽头》","[03]《坍缩》","[04]《带上她的眼晴》","[05]《地火》","[06]《流浪地球》","[07]《乡村教师》","[08]《微纪元》","[09]《纤维》","[10]《命运》","[11]《全频带阻塞干扰》（俄罗斯版）","[12]《全频带阻塞干扰》（中国版）","[13]《信使》","[14]《混沌蝴蝶》","[15]《西洋》","[16]《中国太阳》","[17]《梦之海》","[18]《朝闻道》","[19]《天使时代》","[20]《吞食者》","[21]《诗云》","[22]《光荣与梦想》","[23]《地球大炮》","[24]《思想者》","[25]《圆圆的肥皂泡》","[26]《白垩纪往事》","[27]《镜子》","[28]《赡养上帝》","[29]《欢乐颂》","[30]《赡养人类》","[31]《山》","[32]《海水高山》","[33]《2018年4月1日》","[34]《人生》","[35]《太原之恋》","[36]《时间移民》","[37]《月夜》","[38]《黄金原野》","[39]《不能共存的节日》"
                 // 添加你的GB18030编码文件
             ]
         };
@@ -84,7 +84,7 @@
         // 加载并显示选中的文件内容
         async function loadFile(filename) {
             const display = document.getElementById('fileContent');
-            filename="./data/"+filename
+            filename="./data/"+filename+".txt"
             if (!filename) {
                 display.textContent = '请选择一个文件...';
                 display.className = 'status';
@@ -119,8 +119,8 @@
             const files = CONFIG.GB18030_FILES;
             
             if (files.length === 0) {
-                selector.innerHTML = '<option value="">-- 未找到GB18030文件 --</option>';
-                document.getElementById('fileContent').textContent = '错误: 没有可用的GB18030文件';
+                selector.innerHTML = '<option value="">-- 未找到文件 --</option>';
+                document.getElementById('fileContent').textContent = '错误: 没有可用的文件';
                 return;
             }
             
