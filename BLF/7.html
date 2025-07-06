@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TXT文件查看器</title>
+    <title>GB18030编码文件阅读器</title>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -19,9 +19,6 @@
         .container {
             margin-top: 30px;
         }
-        #fileList {
-            margin-bottom: 20px;
-        }
         #fileContent {
             white-space: pre-wrap;
             background-color: #f5f5f5;
@@ -29,13 +26,14 @@
             border-radius: 5px;
             border: 1px solid #ddd;
             min-height: 200px;
+            margin-top: 15px;
         }
         select {
             padding: 8px;
             width: 100%;
-            margin-bottom: 15px;
+            font-size: 16px;
         }
-        .loading {
+        .status {
             color: #666;
             font-style: italic;
         }
@@ -45,84 +43,103 @@
     </style>
 </head>
 <body>
-    <h1>刘慈欣小说集</h1>
+    <h1>GB18030编码文件阅读器</h1>
     
     <div class="container">
-        <h3>选择篇目：</h3>
+        <h3>选择要查看的文件：</h3>
         <select id="fileSelector">
-            <option value="">-- 请选择篇目 --</option>
+            <option value="">-- 正在加载文件列表 --</option>
         </select>
         
-        <h3>内容：</h3>
-        <div id="fileContent">请从上方选择一个篇目...</div>
+        <div id="fileContent" class="status">请从上方选择一个文件...</div>
     </div>
 
     <script>
-        // 获取同目录下的TXT文件列表
-        async function fetchTxtFiles() {
+        // 配置部分
+        const CONFIG = {
+            // 已知的GB18030编码文件列表
+            GB18030_FILES: ["[01]《鲸歌》.txt","[02]《微观尽头》.txt","[03]《坍缩》.txt","[04]《带上她的眼晴》.txt","[05]《地火》.txt","[06]《流浪地球》.txt","[07]《乡村教师》.txt","[08]《微纪元》.txt","[09]《纤维》.txt","[10]《命运》.txt","[11]《全频带阻塞干扰》（俄罗斯版）.txt","[12]《全频带阻塞干扰》（中国版）.txt","[13]《信使》.txt","[14]《混沌蝴蝶》.txt","[15]《西洋》.txt","[16]《中国太阳》.txt","[17]《梦之海》.txt","[18]《朝闻道》.txt","[19]《天使时代》.txt","[20]《吞食者》.txt","[21]《诗云》.txt","[22]《光荣与梦想》.txt","[23]《地球大炮》.txt","[24]《思想者》.txt","[25]《圆圆的肥皂泡》.txt","[26]《白垩纪往事》.txt","[27]《镜子》.txt","[28]《赡养上帝》.txt","[29]《欢乐颂》.txt","[30]《赡养人类》.txt","[31]《山》.txt","[32]《海水高山》.txt","[33]《2018年4月1日》.txt","[34]《人生》.txt","[35]《太原之恋》.txt","[36]《时间移民》.txt","[37]《月夜》.txt","[38]《黄金原野》.txt","[39]《不能共存的节日》.txt"
+                // 添加你的GB18030编码文件
+            ]
+        };
+
+        // 使用TextDecoder解码GB18030内容
+        async function readGB18030File(fileUrl) {
             try {
-                // 这里假设你知道可能的TXT文件名，或者有某种命名规律
-                // 在实际应用中，你可能需要服务器端支持来获取真实文件列表
-                // 这是一个模拟实现，你需要替换为实际的文件名
-                const txtFiles = ["[01]《鲸歌》.txt","[02]《微观尽头》.txt","[03]《坍缩》.txt","[04]《带上她的眼晴》.txt","[05]《地火》.txt","[06]《流浪地球》.txt","[07]《乡村教师》.txt","[08]《微纪元》.txt","[09]《纤维》.txt","[10]《命运》.txt","[11]《全频带阻塞干扰》（俄罗斯版）.txt","[12]《全频带阻塞干扰》（中国版）.txt","[13]《信使》.txt","[14]《混沌蝴蝶》.txt","[15]《西洋》.txt","[16]《中国太阳》.txt","[17]《梦之海》.txt","[18]《朝闻道》.txt","[19]《天使时代》.txt","[20]《吞食者》.txt","[21]《诗云》.txt","[22]《光荣与梦想》.txt","[23]《地球大炮》.txt","[24]《思想者》.txt","[25]《圆圆的肥皂泡》.txt","[26]《白垩纪往事》.txt","[27]《镜子》.txt","[28]《赡养上帝》.txt","[29]《欢乐颂》.txt","[30]《赡养人类》.txt","[31]《山》.txt","[32]《海水高山》.txt","[33]《2018年4月1日》.txt","[34]《人生》.txt","[35]《太原之恋》.txt","[36]《时间移民》.txt","[37]《月夜》.txt","[38]《黄金原野》.txt","[39]《不能共存的节日》.txt"
-                    // 添加你实际会部署的TXT文件名
-                ];
+                const response = await fetch(fileUrl);
+                if (!response.ok) throw new Error(`HTTP错误: ${response.status}`);
                 
-                return txtFiles;
+                // 以ArrayBuffer形式获取数据
+                const buffer = await response.arrayBuffer();
+                
+                // 使用GB18030解码器
+                const decoder = new TextDecoder('gb18030');
+                return decoder.decode(buffer);
             } catch (error) {
-                console.error('获取文件列表失败:', error);
-                return [];
+                console.error('读取文件失败:', error);
+                throw error;
             }
         }
 
-        // 加载并显示选择的文件内容
-        async function loadSelectedFile(filename) {
-            const fileContent = document.getElementById('fileContent');
+        // 加载并显示选中的文件内容
+        async function loadFile(filename) {
+            const display = document.getElementById('fileContent');
             filename="./data/"+filename
             if (!filename) {
-                fileContent.textContent = "请选择一个TXT文件...";
+                display.textContent = '请选择一个文件...';
+                display.className = 'status';
                 return;
             }
             
-            fileContent.textContent = "加载中...";
+            display.textContent = '加载中...';
+            display.className = 'status';
             
             try {
-                const response = await fetch(filename);
+                // 添加时间戳防止缓存
+                const url = `${filename}?t=${Date.now()}`;
+                const content = await readGB18030File(url);
                 
-                if (!response.ok) {
-                    throw new Error(`文件加载失败: ${response.status}`);
-                }
-                
-                const text = await response.text();
-                fileContent.textContent = text;
+                display.textContent = content;
+                display.className = '';
             } catch (error) {
-                fileContent.textContent = `错误: ${error.message}`;
-                console.error('加载文件出错:', error);
+                display.textContent = `错误: ${error.message}`;
+                display.className = 'error';
+                console.error('文件加载错误:', error);
             }
         }
 
         // 初始化页面
-        async function init() {
-            const fileSelector = document.getElementById('fileSelector');
+        async function initPage() {
+            const selector = document.getElementById('fileSelector');
             
-            // 获取TXT文件列表并填充选择器
-            const txtFiles = await fetchTxtFiles();
+            // 清空选择器
+            selector.innerHTML = '<option value="">-- 选择文件 --</option>';
             
-            txtFiles.forEach(file => {
+            // 使用配置中的文件列表
+            const files = CONFIG.GB18030_FILES;
+            
+            if (files.length === 0) {
+                selector.innerHTML = '<option value="">-- 未找到GB18030文件 --</option>';
+                document.getElementById('fileContent').textContent = '错误: 没有可用的GB18030文件';
+                return;
+            }
+            
+            // 填充选择器
+            files.forEach(file => {
                 const option = document.createElement('option');
                 option.value = file;
                 option.textContent = file;
-                fileSelector.appendChild(option);
+                selector.appendChild(option);
             });
             
             // 监听选择变化
-            fileSelector.addEventListener('change', (e) => {
-                loadSelectedFile(e.target.value);
+            selector.addEventListener('change', (e) => {
+                loadFile(e.target.value);
             });
         }
 
         // 页面加载完成后初始化
-        window.addEventListener('DOMContentLoaded', init);
+        window.addEventListener('DOMContentLoaded', initPage);
     </script>
 </body>
 </html>
