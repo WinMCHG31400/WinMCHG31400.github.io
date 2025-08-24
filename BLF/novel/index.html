@@ -5,71 +5,35 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>长篇小说</title>
-    <style>
-        body {
-            font-family: Arial, "Microsoft YaHei", sans-serif;
-            max-width: 900px;
-            margin: 0 auto;
-            padding: 20px;
-            line-height: 1.6;
-            color: #333;
-        }
-
-        h1 {
-            text-align: center;
-            margin-bottom: 30px;
-            color: #2c3e50;
-        }
-
-        .control-panel {
-            background: #f8f9fa;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
-
-        a:hover {
-            color: #5b5a5a
-        }
-
-        .a2 {
-            text-decoration: none;
-            color: black;
-            font-size: 25px;
-            margin-left: 10px;
-            margin-right: 10px;
-        }
-        
-        a:hover {
-            color: #5b5a5a
-        }
-
-        a {
-            text-decoration: none;
-            color: #2c3e50;
-        }
-    </style>
+    <link rel="stylesheet" async href="/BLF/style.css">
 </head>
 
 <body>
-    <h1><a href="../">刘慈欣小说集</a>>长篇小说</h1>
+    <div class="content-wrapper">
+        <h1><a href="../">刘慈欣小说集</a>>长篇小说</h1>
 
-    <div class="control-panel">
-        <div style="text-align: center;">
-        <a href="three-body/" target="_blank" class="a2">三体</a>
-        <a href="three-body-II/" target="_blank" class="a2">三体II·黑暗森林</a>
-        <a href="three-body-III/" target="_blank" class="a2">三体III·死神永生</a>
-        <a href="BL/" target="_blank" class="a2">球状闪电</a>
+        <div class="container">
+            <a href="three-body/" class="a1">三体</a>
+            <a href="three-body-II/" class="a1">三体II·黑暗森林</a>
+            <a href="three-body-III/" class="a1">三体III·死神永生</a>
+            <a href="BL/" class="a1">球状闪电</a>
+            <a href="DB/" class="a1">魔鬼积木</a>
+            <a href="2185/" class="a1">中国2185</a>
+            <a href="SE2/" class="a1">超新星纪元（第二版）</a>
+            <a href="SE5/" class="a1">超新星纪元（第五版）</a>
+            <a href="SEZ/" class="a1">超新星纪元（综合版）</a>
+            <a href="WDMA/" class="a1">当恐龙遇上蚂蚁</a>
         </div>
-        <div style="text-align: center;">
-        <a href="DB/" target="_blank" class="a2">魔鬼积木</a>
-        <a href="2185/" target="_blank" class="a2">中国2185</a>
-        <a href="SEF/" target="_blank" class="a2">超新星纪元（完整版）</a>
-        <a href="SEP/" target="_blank" class="a2">超新星纪元（作家出版社）</a>
-        </div>
+        <button id="scrollTopBtn" title="返回顶部">▴</button>
+        <button id="themeBtn" title="主题">
+            <svg viewBox="0 0 24 24" width="38" height="38" fill="white"> <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10zm0-18a8 8 0 1 1 0 16 8 8 0 0 1 0-16z"/> <path d="M12 18a6 6 0 0 0 0-12v12z"/></svg>
+        </button>
+        <button id="shareBtn" title="分享">分享</button>
     </div>
-
+    <div id="footer">
+        <p><a href="/BLF/">刘慈欣小说集</a> | <a href="https://github.com/WinMCHG31400/sf-lcx-read" target="_blank">Github</a></p>
+    </div>
+    <script src="/BLF/theme.js"></script>
 </body>
 
 </html>
