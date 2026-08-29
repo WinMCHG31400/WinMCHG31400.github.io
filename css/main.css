@@ -134,3 +134,27 @@ img {
     cursor: pointer;
     transition: background-color 0.3s, color 0.3s;
 }
+
+#language-switch:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+
+#expandButton {
+    background-color: #1a1a1a;
+    color: #cccccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+#expandButton:hover {
+    background-color: #333333;
+    color: #ffffff;
+}
+.content-intro-div {
+    color:#cccccc;
+    line-height: 1.5;
+}

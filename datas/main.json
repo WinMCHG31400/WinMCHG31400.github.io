@@ -1,4 +1,10 @@
 {
+    "intro": [
+        "Hi! I am a science fiction fan who knows a little coding and singing synthesis.",
+        "I love Liu Cixin's stories most,so I made a website to read his novels online: <a href=\"https://sf-lcx.pages.dev/\" target=\"_blank\" class=\"a-use\">visit</a>.",
+        "I can write a little <a href=\"https://www.qt.io/\" target=\"_blank\" class=\"a-use\">Qml</a>, you can see this project: <a href=\"https://github.com/lazx547/547DesktopTool\" target=\"_blank\" class=\"a-use\">547DesktopTool</a>, <a href=\"https://github.com/WinMCHG31400/SnackQml\" target=\"_blank\" class=\"a-use\">SnackQml</a>.",
+        "In the field of singing synthesis, I use <a href=\"https://diffsinger.com\" target=\"_blank\" class=\"a-use\">diffsinger</a> in <a href=\"https://github.com/openutau/OpenUtau\" target=\"_blank\" class=\"a-use\">OpenUtau</a> mostly, but I also use <a href=\"https://dreamtonics.com/\" target=\"_blank\" class=\"a-use\">Synthesizer V Studio</a>, all my turning project files are uploaded to my Github in <a href=\"https://github.com/WinMCHG31400/scores\" target=\"_blank\" class=\"a-use\">scores</a> "
+    ],
     "websites": [
         {
             "name": "SF-LCX-READ",
@@ -31,8 +37,8 @@
             "description": "A code hosting platform",
             "urls": [
                 {
-                    "name":"GitHub Profile",
-                    "url":"https://github.com/WinMCHG31400"
+                    "name": "GitHub Profile",
+                    "url": "https://github.com/WinMCHG31400"
                 }
             ]
         },
@@ -41,8 +47,8 @@
             "description": "Global Name: winmchg31400_43694",
             "urls": [
                 {
-                    "name":"Discord Profile",
-                    "url":"https://discord.com/users/1542450281537732651"
+                    "name": "Discord Profile",
+                    "url": "https://discord.com/users/1542450281537732651"
                 }
             ]
         },
@@ -51,8 +57,8 @@
             "description": "A video sharing platform",
             "urls": [
                 {
-                    "name":"BiliBili Profile",
-                    "url":"https://space.bilibili.com/1150293211"
+                    "name": "BiliBili Profile",
+                    "url": "https://space.bilibili.com/1150293211"
                 }
             ]
         },
@@ -61,8 +67,8 @@
             "description": "A virtual singer project share platform",
             "urls": [
                 {
-                    "name":"vsqx Profile",
-                    "url":"https://www.vsqx.top/space/23496"
+                    "name": "vsqx Profile",
+                    "url": "https://www.vsqx.top/space/23496"
                 }
             ]
         },
@@ -71,8 +77,8 @@
             "description": "winmchg31400@outlook.com",
             "urls": [
                 {
-                    "name":"Send Email",
-                    "url":"mailto:winmchg31400@outlook.com"
+                    "name": "Send Email",
+                    "url": "mailto:winmchg31400@outlook.com"
                 }
             ]
         },
@@ -81,12 +87,12 @@
             "description": "A music platform",
             "urls": [
                 {
-                    "name":"Artist Profile",
-                    "url":"https://music.163.com/#/artist?id=124041836"
+                    "name": "Artist Profile",
+                    "url": "https://music.163.com/#/artist?id=124041836"
                 },
                 {
-                    "name":"User Profile",
-                    "url":"https://music.163.com/#/user/home?id=12829213027"
+                    "name": "User Profile",
+                    "url": "https://music.163.com/#/user/home?id=12829213027"
                 }
             ]
         },
@@ -95,8 +101,8 @@
             "description": "A question-and-answer platform",
             "urls": [
                 {
-                    "name":"ZhiHu Profile",
-                    "url":"https://www.zhihu.com/people/winmchg31400"
+                    "name": "ZhiHu Profile",
+                    "url": "https://www.zhihu.com/people/winmchg31400"
                 }
             ]
         },
@@ -105,8 +111,8 @@
             "description": "A technology community",
             "urls": [
                 {
-                    "name":"CSDN Blog",
-                    "url":"https://blog.csdn.net/2404_87854477"
+                    "name": "CSDN Blog",
+                    "url": "https://blog.csdn.net/2404_87854477"
                 }
             ]
         }

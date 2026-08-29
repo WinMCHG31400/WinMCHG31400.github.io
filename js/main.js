@@ -1,5 +1,8 @@
 let currentLanguage = "en";
-
+const intro_container = document.getElementById('content-intro');
+const contact_container = document.getElementById('content-contact');
+const websites_container = document.getElementById('content-websites');
+let intros = [];
 
 async function fetchjson() {
     language = currentLanguage == "zh" ? "_zh" : "";
@@ -14,10 +17,19 @@ async function fetchjson() {
     }
 }
 
-function createLinkBoxs(websites, container) {
+function createIntro(intro) {
+    intros = intro;
+    const intro_paragraph = document.createElement('div');
+    intro_paragraph.id = "content-intro-div";
+    intro_paragraph.className = "content-intro-div";
+    intro_paragraph.innerHTML = intro[0];
+    intro_container.insertBefore(intro_paragraph, intro_container.firstChild);
+}
+
+function createLinkBoxs(websites) {
     const websites_container_title = document.createElement('h2');
     websites_container_title.textContent = currentLanguage == "zh" ? "我制作的网站" : "My Websites";
-    container.appendChild(websites_container_title);
+    websites_container.appendChild(websites_container_title);
     websites.forEach(website => {
         const linkBox = document.createElement('div');
         linkBox.className = 'content-linkbox';
@@ -27,15 +39,14 @@ function createLinkBoxs(websites, container) {
             <p><a href="${website.github}" target="_blank" class="a-use">Github</a> | 
             <a href="${website.url}" target="_blank" class="a-use">` + (currentLanguage == "zh" ? "访问" : "Website") + `</a></p>
         `;
-        console.log(linkBox);
-        container.appendChild(linkBox);
+        websites_container.appendChild(linkBox);
     });
 }
 
-function createContactBoxs(contacts, container) {
+function createContactBoxs(contacts) {
     const contact_container_title = document.createElement('h2');
     contact_container_title.textContent = currentLanguage == "zh" ? "联系方式" : "Contact";
-    container.appendChild(contact_container_title);
+    contact_container.appendChild(contact_container_title);
     contacts.forEach(contactItem => {
         const linkBox = document.createElement('div');
         linkBox.className = 'content-linkbox';
@@ -67,21 +78,24 @@ function createContactBoxs(contacts, container) {
             linkBox.appendChild(linkElement);
         }
 
-        container.appendChild(linkBox);
+        contact_container.appendChild(linkBox);
     });
 }
 
 function createElement() {
-    const content_websites = document.getElementById('content-websites');
-    const content_contact = document.getElementById('content-contact');
-    const languageSwitchButton = document.createElement('button');
-    languageSwitchButton.id = 'language-switch';
+    const content_title = document.getElementById('content-title');
+    const content_intro = document.getElementById('content-intro-1');
+    content_title.textContent = currentLanguage == "zh" ? "WinMCHG31400的网站" : "Welcome to WinMCHG31400's Website";
+    content_intro.textContent = currentLanguage == "zh" ? "" : "This is a personal website for WinMCHG31400.";
+    const languageSwitchButton = document.getElementById('language-switch');
+    const expandButton = document.getElementById('expandButton');
+    expandButton.textContent = currentLanguage == "zh" ? "展开" : "Expand";
+    expandButton.title = currentLanguage == "zh" ? "展开" : "Expand";
     languageSwitchButton.textContent = currentLanguage == "zh" ? "EN" : "中文";
-    languageSwitchButton.addEventListener('click', switchLanguage);
-    document.body.insertBefore(languageSwitchButton, document.body.firstChild);
     fetchjson().then(data => {
-        createLinkBoxs(data.websites, content_websites);
-        createContactBoxs(data.contacts, content_contact);
+        createIntro(data.intro, content_intro);
+        createLinkBoxs(data.websites);
+        createContactBoxs(data.contacts);
     })
 }
 
@@ -89,11 +103,30 @@ function switchLanguage() {
     currentLanguage = currentLanguage == "zh" ? "en" : "zh";
     const content_websites = document.getElementById('content-websites');
     const content_contact = document.getElementById('content-contact');
-    const languageSwitchButton = document.getElementById('language-switch');
-    document.body.removeChild(languageSwitchButton);
+    const content_intro_div = document.getElementById('content-intro-div');
     content_websites.innerHTML = '';
     content_contact.innerHTML = '';
+    content_intro_div.innerHTML = '';
     createElement();
+}
+
+function expandContent() {
+    const contentIntro = document.querySelector('.content-intro');
+    const expandButton = document.getElementById('expandButton');
+    const contentIntroBox = document.getElementById('content-intro-div');
+    if(expandButton.title == (currentLanguage == "zh" ? "收起" : "Collapse")) {
+        contentIntroBox.innerHTML = intros[0];
+        expandButton.textContent = currentLanguage == "zh" ? "展开" : "Expand";
+        expandButton.title = currentLanguage == "zh" ? "展开" : "Expand";
+        return;
+    }
+    intros.forEach((intro, index) => {
+        if (index > 0) {
+            contentIntroBox.innerHTML+= '<br>' + intro;
+        }
+    })
+    expandButton.textContent = currentLanguage == "zh" ? "收起" : "Collapse";
+    expandButton.title = currentLanguage == "zh" ? "收起" : "Collapse";
 }
 
 window.addEventListener('DOMContentLoaded', function () {

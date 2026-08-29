@@ -7,6 +7,7 @@
 </head>
 
 <body style="background-color: #000000;">
+  <button id="language-switch" onclick="switchLanguage()">EN</button>
   <header>
     <div class="center">
       <img src="mine.png" alt="Logo" width="200">
@@ -14,13 +15,10 @@
   </header>
   <div class="content-wrapper">
     <div class="center">
-      <h1>Welcome to WinMCHG31400's Website</h1>
-      <p>This is a personal website for WinMCHG31400.</p>
-      <div class="content-intro">
-        <p>I am a science fiction fan interested in programming and singing synthesis.</p>
-        <p>I like <a class="a-use" href="https://www.qt.io/" target="_blank">Qt/Qml</a> in application development.</p>
-        <p>I use <a class="a-use" href="https://diffsinger.com/" target="_blank">Diffsinger</a> and <a class="a-use" href="https://discord.gg/JvVnGs45m" target="_blank">SynthV Flat</a> for voice synthesis.</p>
-        <p>I love Liu Cixin's stories and <a class="a-use" href="https://space.bilibili.com/15817819/" target="_blank">Stardust</a>'s voices.</p>
+      <h1 id="content-title">Welcome to WinMCHG31400's Website</h1>
+      <p id="content-intro-1">This is a personal website for WinMCHG31400.</p>
+      <div class="content-intro" id="content-intro">
+        <button id="expandButton" onclick="expandContent()">Expand</button>
       </div>
     </div>
     <div class="content-linksbox" id="content-websites">

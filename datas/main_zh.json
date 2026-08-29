@@ -1,4 +1,10 @@
 {
+    "intro": [
+        "I do not want to give a Chinese introduction.<br>Hi! I am a science fiction fan who knows a little coding and singing synthesis.",
+        "I love Liu Cixin's stories most,so I made a website to read his novels online: <a href=\"https://sf-lcx.pages.dev/\" target=\"_blank\" class=\"a-use\">visit</a>.",
+        "I can write a little <a href=\"https://www.qt.io/\" target=\"_blank\" class=\"a-use\">Qml</a>, you can see this project: <a href=\"https://github.com/lazx547/547DesktopTool\" target=\"_blank\" class=\"a-use\">547DesktopTool</a>, <a href=\"https://github.com/WinMCHG31400/SnackQml\" target=\"_blank\" class=\"a-use\">SnackQml</a>.",
+        "In the field of singing synthesis, I use <a href=\"https://diffsinger.com\" target=\"_blank\" class=\"a-use\">diffsinger</a> in <a href=\"https://github.com/openutau/OpenUtau\" target=\"_blank\" class=\"a-use\">OpenUtau</a> mostly, but I also use <a href=\"https://dreamtonics.com/\" target=\"_blank\" class=\"a-use\">Synthesizer V Studio</a>, all my turning project files are uploaded to my Github in <a href=\"https://github.com/WinMCHG31400/scores\" target=\"_blank\" class=\"a-use\">scores</a> "
+    ],
     "websites": [
         {
             "name": "SF-LCX-READ",
