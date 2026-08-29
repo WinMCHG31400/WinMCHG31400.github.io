@@ -50,6 +50,16 @@ p {
     margin: auto;
 }
 
+button {
+    text-decoration: none;
+    color: #cccccc;
+    transition: color 0.3s;
+    cursor: pointer;
+    display: inline-block;
+    background-color: #00000000;
+    border: none;
+}
+
 .content-wrapper {
     flex: 1;
     padding: 20px;
@@ -110,4 +120,17 @@ img {
 
 .a-use:hover {
     color: #ffffff;
+}
+
+#language-switch {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    background-color: #1a1a1a;
+    color: #cccccc;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s, color 0.3s;
 }

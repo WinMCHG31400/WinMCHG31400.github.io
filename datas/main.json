@@ -1,0 +1,114 @@
+{
+    "websites": [
+        {
+            "name": "SF-LCX-READ",
+            "description": "A website to read LCX's novels.",
+            "github": "https://github.com/WinMCHG31400/sf-lcx-read",
+            "url": "https://sf-lcx.pages.dev/"
+        },
+        {
+            "name": "BPM-Detective",
+            "description": "A website to detect BPM in music.",
+            "github": "https://github.com/WinMCHG31400/bpm-detective",
+            "url": "https://bpm-detective.pages.dev/"
+        },
+        {
+            "name": "Scores",
+            "description": "A website for downloading/previewing some scores or downloading some vitrual singers' projects files.",
+            "github": "https://github.com/WinMCHG31400/scores",
+            "url": "https://winmchg31400-scores.pages.dev/"
+        },
+        {
+            "name": "Gaokao Math",
+            "description": "A website for downloading or previewing Gaokao math test papers.<br>Base on <a class=\"a-use\" href=\"https://github.com/deekur/gaokaomath\" target=\"_blank\">deekur/gaokaomath<a>",
+            "github": "https://github.com/WinMCHG31400/gaokaomath",
+            "url": "https://gaokao-math.pages.dev/"
+        }
+    ],
+    "contacts": [
+        {
+            "name": "GitHub",
+            "description": "A code hosting platform",
+            "urls": [
+                {
+                    "name":"GitHub Profile",
+                    "url":"https://github.com/WinMCHG31400"
+                }
+            ]
+        },
+        {
+            "name": "Discord",
+            "description": "Global Name: winmchg31400_43694",
+            "urls": [
+                {
+                    "name":"Discord Profile",
+                    "url":"https://discord.com/users/1542450281537732651"
+                }
+            ]
+        },
+        {
+            "name": "BiliBili",
+            "description": "A video sharing platform",
+            "urls": [
+                {
+                    "name":"BiliBili Profile",
+                    "url":"https://space.bilibili.com/1150293211"
+                }
+            ]
+        },
+        {
+            "name": "vsqx",
+            "description": "A virtual singer project share platform",
+            "urls": [
+                {
+                    "name":"vsqx Profile",
+                    "url":"https://www.vsqx.top/space/23496"
+                }
+            ]
+        },
+        {
+            "name": "Email",
+            "description": "winmchg31400@outlook.com",
+            "urls": [
+                {
+                    "name":"Send Email",
+                    "url":"mailto:winmchg31400@outlook.com"
+                }
+            ]
+        },
+        {
+            "name": "NetEase Music",
+            "description": "A music platform",
+            "urls": [
+                {
+                    "name":"Artist Profile",
+                    "url":"https://music.163.com/#/artist?id=124041836"
+                },
+                {
+                    "name":"User Profile",
+                    "url":"https://music.163.com/#/user/home?id=12829213027"
+                }
+            ]
+        },
+        {
+            "name": "ZhiHu",
+            "description": "A question-and-answer platform",
+            "urls": [
+                {
+                    "name":"ZhiHu Profile",
+                    "url":"https://www.zhihu.com/people/winmchg31400"
+                }
+            ]
+        },
+        {
+            "name": "CSDN",
+            "description": "A technology community",
+            "urls": [
+                {
+                    "name":"CSDN Blog",
+                    "url":"https://blog.csdn.net/2404_87854477"
+                }
+            ]
+        }
+    ]
+}

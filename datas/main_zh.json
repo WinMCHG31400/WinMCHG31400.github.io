@@ -1,0 +1,109 @@
+{
+    "websites": [
+        {
+            "name": "SF-LCX-READ",
+            "description": "刘慈欣小说阅读网站",
+            "github": "https://github.com/WinMCHG31400/sf-lcx-read",
+            "url": "https://sf-lcx.pages.dev/"
+        },
+        {
+            "name": "BPM-Detective",
+            "description": "在线BPM检测",
+            "github": "https://github.com/WinMCHG31400/bpm-detective",
+            "url": "https://bpm-detective.pages.dev/"
+        },
+        {
+            "name": "Scores",
+            "description": "个人的制谱源文件和虚拟歌手调音文件",
+            "github": "https://github.com/WinMCHG31400/scores",
+            "url": "https://winmchg31400-scores.pages.dev/"
+        },
+        {
+            "name": "Gaokao Math",
+            "description": "高考数学试卷预览或下载。基于<a class=\"a-use\" href=\"https://github.com/deekur/gaokaomath\" target=\"_blank\">deekur/gaokaomath<a>",
+            "github": "https://github.com/WinMCHG31400/gaokaomath",
+            "url": "https://gaokao-math.pages.dev/"
+        }
+    ],
+    "contacts": [
+        {
+            "name": "GitHub",
+            "urls": [
+                {
+                    "name":"GitHub主页",
+                    "url":"https://github.com/WinMCHG31400"
+                }
+            ]
+        },
+        {
+            "name": "Discord",
+            "description": "国外社交软件",
+            "urls": [
+                {
+                    "name":"Discord主页",
+                    "url":"https://discord.com/users/1542450281537732651"
+                }
+            ]
+        },
+        {
+            "name": "BiliBili",
+            "urls": [
+                {
+                    "name":"BiliBili主页",
+                    "url":"https://space.bilibili.com/1150293211"
+                }
+            ]
+        },
+        {
+            "name": "vsqx",
+            "description": "一个调音文件分享网站",
+            "urls": [
+                {
+                    "name":"vsqx主页",
+                    "url":"https://www.vsqx.top/space/23496"
+                }
+            ]
+        },
+        {
+            "name": "Email",
+            "description": "winmchg31400@outlook.com",
+            "urls": [
+                {
+                    "name":"发送邮件",
+                    "url":"mailto:winmchg31400@outlook.com"
+                }
+            ]
+        },
+        {
+            "name": "网易云音乐",
+            "urls": [
+                {
+                    "name":"音乐人主页",
+                    "url":"https://music.163.com/#/artist?id=124041836"
+                },
+                {
+                    "name":"用户主页",
+                    "url":"https://music.163.com/#/user/home?id=12829213027"
+                }
+            ]
+        },
+        {
+            "name": "知乎",
+            "urls": [
+                {
+                    "name":"知乎主页",
+                    "url":"https://www.zhihu.com/people/winmchg31400"
+                }
+            ]
+        },
+        {
+            "name": "CSDN",
+            "urls": [
+                {
+                    "name":"CSDN主页",
+                    "url":"https://blog.csdn.net/2404_87854477"
+                }
+            ]
+        }
+    ]
+}
